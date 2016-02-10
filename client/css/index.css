@@ -1,0 +1,11 @@
+a {
+	text-decoration: none;
+	color: white;
+}
+body{
+	/*background-color: #9AC0CD;*/
+	font-family: arial;
+	background: url('/images/main_texture.png') 50% no-repeat fixed;
+	width: 100%;
+	background-size: cover;
+}

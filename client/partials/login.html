@@ -1,0 +1,43 @@
+<div ng-controller='loginController'>
+  <div class="container">
+    <div id = 'register' class = 'boxes'>
+    <form ng-submit='createUser(newUser)'>
+    <p>New? Join Soul Food today!</p>
+      <div ng-if='loginError.message'><span ng-bind='loginError.message'></span></div>
+      <input type = 'text' ng-model = 'newUser.name' name = 'name'required placeholder="Name">
+      <input type = 'email' ng-model = 'newUser.email' name = 'email'required placeholder="Email">
+      <input type = 'password' ng-model = 'newUser.password' name = 'password'required placeholder="Password">
+      <input type = 'password'  name = 'confirm password' ng-model='newUser.confirmPassword' required placeholder="Confirm Password">
+      <input class ='btn' type = 'submit' value = 'Register'>
+    </form>
+    </div>
+</div>
+<div class="container">
+    <div id = 'login' class = 'boxes'>
+    <form ng-submit='loginUser(userData)'>
+      <p>Been here before? Login below.</p>
+      <div ng-if='error.message'><span ng-bind='error.message'></span></div>
+      <input type = 'text' ng-model='userData.email'required placeholder="Email">
+      <input type = 'password' ng-model = 'userData.password'required placeholder="Password">
+      <input class = 'btn' type ='submit' value = 'login'>
+    </form>
+    </div>
+
+    <a class = 'btn btn-block btn-social btn-facebook' href="/auth/facebook"><span class="fa fa-facebook"></span>Sign in with Facebook</a>
+    <a class="btn btn-block btn-social btn-google" href="/auth/google">
+      <span class="fa fa-google"></span> Sign in with Google
+    </a>
+    <p>
+      Don't worry, we never post without your permission.
+    </p>
+  </div>
+</div>
+
+<!-- footer -->
+<div class="row">
+    <div id="footer">
+      <div class="col-sm-4">
+          <h6> Sole Good © 2016 </h6>
+      </div>
+    </div>
+</div>

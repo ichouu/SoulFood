@@ -1,0 +1,15 @@
+  <div id = 'wrapper'>
+    <div id = 'formwrapper'>
+    <h1>Create a new event!</h1>
+    <p ng-bind="errors.message"></p>
+      <form ng-submit="addEvent()">
+        <p>Event Date: <input type="date" name="date" value="date"></p>
+        <p>Event Time: <input type="time" name="time" value="time"></p>
+        <p>Event Location: <input type="location" name="location" value="location"></p>
+        <p>Event Description: <textarea ng-model="new_answer.answer"></textarea></p>
+       <input id = 'submit' type="submit" value="Submit">
+        <a id = 'goback' ng-href="#/dashboard">Cancel</a>      
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,47 @@
+<div ng-controller='addRestaurantController' class="container">
+  <h1>Bookmark a Restaurant</h1>
+  <form ng-submit='searchRestaurants(search)'>
+    <label>Find: <input type="text" placeholder="tacos, cheap dinner, Max's" ng-model='search.find'></label>
+    <label>Near: <input type="text" placeholder='address, neighborhood, city, state or zip' ng-model='search.location'></label>
+    <!-- <input type="submit" value='search' class="btn"> -->
+    <button class="btn"><i class="fa fa-search"></i></button>
+  </form>
+    <table class="highlight">
+      <thead>
+        <tr>
+          <td>
+            #
+          </td>
+          <td>
+
+          </td>
+          <td>
+            Name
+          </td>
+          <td>
+            Rating
+          </td>
+          <td>
+            Action
+          </td>
+        </tr>
+      </thead>
+      <tr ng-repeat='searchResult in searchResults'>
+        <td>
+          {{$index + 1}}
+        </td>
+        <td>
+          <img class="img-responsive" src="{{searchResult.image_url}}" alt="" />
+        </td>
+        <td>
+          <a href="{{searchResult.url}}" uib-popover="View on Yelp" popover-trigger="mouseenter"><span ng-bind='searchResult.name'></span><i class="fa fa-yelp"></i></a>
+        </td>
+        <td>
+          <img class="img-responsive" src="{{searchResult.rating_img_url}}" alt="" />
+        </td>
+        <td>
+          <button ng-click='addRestaurant(searchResult)' class="btn"><i class="fa fa-bookmark"></i></button>
+        </td>
+      </tr>
+    </table>
+</div>

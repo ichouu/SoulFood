@@ -1,0 +1,35 @@
+#allevents {
+	width: 100%;
+	border: 1px solid black;
+	height: 700px;
+	overflow: scroll;
+	background: url('/images/eventbg1.jpg') 50% no-repeat fixed;
+	background-size: cover;
+}
+	h2{
+		width: 100%;
+		background-color: rgba(192, 192, 192, .5);
+		height: 50px;
+		color: white;
+	}
+	table {
+	/*display: inline-block;*/
+	border: 1px solid black;
+	/*width: 700px;
+	height: 430px;*/
+	vertical-align: top;
+	/*margin-left: 50px;*/
+	position: relative;
+	border-radius: 5px;
+	background: rgba(201, 175, 148, .6);
+	border-collapse: collapse;
+	text-align: center;
+	}
+		table td{
+			padding: 5px;
+			text-align: center;
+		}
+		table th{
+			text-align: center;
+			padding-left: 3px;
+		}

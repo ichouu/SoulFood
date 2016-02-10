@@ -1,0 +1,33 @@
+<div id = 'allevents' ng-controller='showAllEventsController' class="container">
+<h2>Upcoming Events</h2><br>
+<i class="material-icons prefix">search</i>
+<label for="icon_prefix"><input id="icon_prefix" type="text" ng-model="filter_event" placeholder="Search events..."></label>
+  <table class="highlight">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Title</th>
+        <th>Restaurant</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Created by</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="event in events | filter:filter_event | orderBy: 'created_at' : reverse" >
+        <td ng-bind="event.date"></td>
+        <td ng-bind="event.time"></td>
+        <td> <a href="#/event/{{event._id}}"><span ng-bind='event.title'></span></a> </td>
+        <td> <a href="#/restaurant/{{event.restaurant._id}}"><span ng-bind='event.restaurant.name'></span></a></td>
+        <td ng-bind="event.location"></td>
+        <td ng-bind="event.description"></td>
+        <td ng-bind="event.type_of_food"></td>
+        <td> <a ng-href="#/user/{{event.user._id}}"><span ng-bind='event.user.name'> </td>
+        <td><button ng-click="attendEvent(event)" class="btn">I'm in!</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
